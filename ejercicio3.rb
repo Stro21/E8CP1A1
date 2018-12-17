@@ -1,6 +1,13 @@
-archivo = 'peliculas.txt'
-file = File.open(archivo, 'r')
-movies = file.readlines
-file.close
-print movies
-puts ''
+# rubocop:disable LineLength
+
+def total_palabras(archivo)
+  file = File.open(archivo, 'r')
+  arreglo = file.readlines
+  file.close
+  counter = arreglo.inject(0) { |acumulador, linea| linea.split.length + acumulador }
+  counter
+end
+
+puts total_palabras('peliculas.txt')
+
+# rubocop:enable LineLength
