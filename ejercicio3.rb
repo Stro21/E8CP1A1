@@ -7,9 +7,8 @@ def total_palabras(archivo)
 end
 
 def leer_archivo(archivo)
-  file = File.open(archivo, 'r')
-  arreglo = file.readlines
-  file.close
+  arreglo = File.open(archivo, 'r') { |file| file.readlines.map(&:chomp) }
+  print "#{arreglo}\n"
   arreglo
 end
 
