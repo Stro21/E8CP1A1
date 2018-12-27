@@ -9,7 +9,10 @@ end
 def leer_archivo(archivo)
   arreglo = File.open(archivo, 'r') { |file| file.readlines.map(&:chomp) }
   print "#{arreglo}\n"
-  arreglo
+  array = []
+  arreglo.each { |arr| array << arr.split(' ') }
+  print "#{array}\n"
+  array
 end
 
 def cantidad_palabra_repetidas(archivo, palabra)
