@@ -1,3 +1,6 @@
+# rubocop:disable AbcSize
+# rubocop:disable MethodLength
+
 def read_file(txt)
   data = File.open(txt, 'r') { |file| file.readlines.map(&:chomp) }
   array = []
@@ -21,3 +24,20 @@ def transform_file(txt)
   data.each { |d| products << create_hash(*d) }
   products
 end
+
+def add_product(hash, txt)
+  puts 'Ingrese nombre del producto.'
+  name = gets.chomp
+  puts 'Ingrese la cantidad en la tienda 1'
+  t1 = gets.chomp
+  puts 'Ingrese la cantidad en la tienda 2'
+  t2 = gets.chomp
+  puts 'Ingrese la cantidad en la tienda 3'
+  t3 = gets.chomp
+  hash << create_hash(name, t1, t2, t3)
+  File.open(txt, 'a') { |file| file.puts "#{name}, #{t1}, #{t2}, #{t4}" }
+  hash
+end
+
+# rubocop:enable AbcSize
+# rubocop:enable MethodLength
