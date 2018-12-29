@@ -1,2 +1,2 @@
-require 'data.rb'
-require 'methods.rb'
+require_relative 'data.rb'
+require_relative 'methods.rb'
