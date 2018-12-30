@@ -17,8 +17,10 @@ def options(data)
 end
 
 def select_options(data, opt)
-  if opt >= 1 && opt <= 6
+  if opt >= 1 && opt <= 5
     send 'option' + opt.to_s, data
+  elsif opt == 6
+    puts 'Se salió del programa'
   else
     puts 'Opción invalida.'
     options(data)
