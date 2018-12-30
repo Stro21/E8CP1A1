@@ -25,7 +25,7 @@ def transform_file(txt)
   products
 end
 
-def add_product(hash, txt)
+def add_product(data, txt)
   puts 'Ingrese nombre del producto.'
   name = gets.chomp
   puts 'Ingrese la cantidad en la tienda 1'
@@ -34,7 +34,7 @@ def add_product(hash, txt)
   t2 = gets.chomp
   puts 'Ingrese la cantidad en la tienda 3'
   t3 = gets.chomp
-  hash << create_hash(name, t1, t2, t3)
+  data << create_hash(name, t1, t2, t3)
   File.open(txt, 'a') { |file| file.puts "#{name}, #{t1}, #{t2}, #{t4}" }
   hash
 end
