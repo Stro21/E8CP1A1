@@ -34,4 +34,10 @@ def store_stock(data)
   store.each_with_index { |st, ind| puts "La tienda#{ind + 1} tiene #{st} de stock total." }
 end
 
+def total_stock(data)
+  total = 0
+  data.each { |hash| total += sum_prod(hash) }
+  puts "La existencia total en todas las tiendas es #{total}."
+end
+
 # rubocop:enable LineLength
