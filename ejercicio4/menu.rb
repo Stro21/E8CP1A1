@@ -1,6 +1,3 @@
-# rubocop:disable AbcSize
-# rubocop:disable MethodLength
-
 require_relative 'data.rb'
 require_relative 'methods.rb'
 
@@ -30,11 +27,7 @@ end
 def option1(data)
   puts 'Ingrese letra sea a, b, c o d.'
   if correct_option(opt)
-    if opt == opt.upcase
-      send 'option_' + opt.downcase, data
-    else
-      send 'option_' + opt, data
-    end
+    option_1(data, opt)
   else
     puts 'Opción invalida.'
     option1(data)
@@ -45,5 +38,10 @@ def correct_option(opt)
   %w[a A b B c C d D].include?(opt)
 end
 
-# rubocop:enable AbcSize
-# rubocop:enable MethodLength
+def option_1(data, opt)
+  if opt == opt.upcase
+    send 'option_' + opt.downcase, data
+  else
+    send 'option_' + opt, data
+  end
+end
