@@ -11,15 +11,26 @@ end
 def create_hash(*arr)
   hash = {}
   hash[:name] = arr[0]
-  hash[:tienda1] = arr[1]
-  hash[:tienda2] = arr[2]
-  hash[:tienda3] = arr[3]
+  hash[:tienda1] = if nr?(arr[1])
+                     arr[1]
+                   else
+                     arr[1].to_i
+                   end
+  hash[:tienda2] = if nr?(arr[2])
+                     arr[2]
+                   else
+                     arr[2].to_i
+                   end
+  hash[:tienda3] = if nr?(arr[3])
+                     arr[3]
+                   else
+                     arr[3].to_i
+                   end
   hash
 end
 
 def transform_file(txt)
   data = read_file(txt)
-  print "#{data}\n"
   products = []
   data.each { |d| products << create_hash(*d) }
   products
@@ -37,6 +48,10 @@ def add_product(data, txt)
   data << create_hash(name, t1, t2, t3)
   File.open(txt, 'a') { |file| file.puts "#{name}, #{t1}, #{t2}, #{t4}" }
   hash
+end
+
+def nr?(str)
+  str == 'NR'
 end
 
 # rubocop:enable AbcSize

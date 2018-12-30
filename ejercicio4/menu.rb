@@ -57,3 +57,8 @@ def option_one(data, opt)
     send 'option_' + opt, data
   end
 end
+
+def option_a(data)
+  total_products(data)
+  options(data)
+end
