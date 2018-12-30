@@ -26,8 +26,17 @@ end
 
 def option1(data)
   puts 'Ingrese letra sea a, b, c o d.'
+  puts 'a) Mostrar la existencia por productos.'
+  puts 'b) Mostrar la existencia total por tienda.'
+  puts 'c) Mostrar la existencia total en todas las tiendas.'
+  puts 'd) Volver al menú principal.'
+  opt = gets.chomp
+  option_1(data, opt)
+end
+
+def option_1(data, opt)
   if correct_option(opt)
-    option_1(data, opt)
+    option_one(data, opt)
   else
     puts 'Opción invalida.'
     option1(data)
@@ -38,8 +47,11 @@ def correct_option(opt)
   %w[a A b B c C d D].include?(opt)
 end
 
-def option_1(data, opt)
-  if opt == opt.upcase
+def option_one(data, opt)
+  if %w[d D].include?(opt)
+    puts 'Se regresa al menu principal.'
+    options(data)
+  elsif opt == opt.upcase
     send 'option_' + opt.downcase, data
   else
     send 'option_' + opt, data
