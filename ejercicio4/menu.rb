@@ -62,3 +62,8 @@ def option_a(data)
   total_products(data)
   options(data)
 end
+
+def option_b(data)
+  store_stock(data)
+  options(data)
+end

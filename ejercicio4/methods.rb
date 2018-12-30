@@ -21,4 +21,17 @@ def nr_to_int(hash, key)
   end
 end
 
+def store_stock(data)
+  t1 = 0
+  t2 = 0
+  t3 = 0
+  data.each do |store|
+    t1 += nr_to_int(store, :tienda1)
+    t2 += nr_to_int(store, :tienda2)
+    t3 += nr_to_int(store, :tienda3)
+  end
+  store = [t1, t2, t3]
+  store.each_with_index { |st, ind| puts "La tienda#{ind + 1} tiene #{st} de stock total." }
+end
+
 # rubocop:enable LineLength
