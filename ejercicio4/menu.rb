@@ -72,3 +72,15 @@ def option_c(data)
   total_stock(data)
   options(data)
 end
+
+def option2(data)
+  puts 'Ingrese un producto a buscar.'
+  name = gets.chomp
+  if correct_search(data, name)
+    i = get_index(data, name)
+    puts "La cantidad de productos es #{sum_prod(data[i])}"
+  else
+    puts 'Ese producto no esta en el stock.'
+    option2(data)
+  end
+end

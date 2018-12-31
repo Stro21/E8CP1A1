@@ -40,4 +40,13 @@ def total_stock(data)
   puts "La existencia total en todas las tiendas es #{total}."
 end
 
+def correct_search(data, name)
+  data.each { |prod| return true if prod[name.to_sym] == prod[prod.keys[0]] }
+  false
+end
+
+def get_index(data, name)
+  data.each_with_index { |prod, ind| return ind unless prod[name.to_sym].nil? }
+end
+
 # rubocop:enable LineLength
