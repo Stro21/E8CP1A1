@@ -48,11 +48,9 @@ end
 def get_index(data, name)
   id = 0
   data.each do |prod|
-    if prod[:name] == name
-      return id
-    else
-      id += 1
-    end
+    return id unless prod[:name] != name
+
+    id += 1
   end
 end
 
