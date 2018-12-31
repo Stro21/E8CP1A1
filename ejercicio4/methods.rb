@@ -41,12 +41,23 @@ def total_stock(data)
 end
 
 def correct_search(data, name)
-  data.each { |prod| return true if prod[name.to_sym] == prod[prod.keys[0]] }
+  data.each { |prod| return true if prod[:name] == name }
   false
 end
 
 def get_index(data, name)
-  data.each_with_index { |prod, ind| return ind unless prod[name.to_sym].nil? }
+  id = 0
+  # data.each_with_index do |prod, ind|
+  #   puts "paso por aquí"
+  #   return ind unless prod[name.to_sym].nil?
+  #   end
+  data.each do |prod|
+    if prod[name.to_sym].nil?
+      id += 1
+    else
+      return id
+    end
+  end
 end
 
 # rubocop:enable LineLength
