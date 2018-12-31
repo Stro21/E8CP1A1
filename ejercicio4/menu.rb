@@ -90,3 +90,11 @@ def option3(data)
   warehouse_nr(data)
   options(data)
 end
+
+def option4(data)
+  print 'Ingresar un numero para buscar si todos los productos que'
+  puts ' tienen menos que ese número.'
+  num = gets.chomp.to_i
+  stock_less_than(data, num)
+  options(data)
+end

@@ -68,5 +68,9 @@ def warehouse_nr(data)
   store.each_with_index { |sto, id| print "Tienda #{id + 1}: #{sto}\n" unless sto == [] }
 end
 
+def stock_less_than(data, num)
+  data.each { |prod| puts prod[:name] if num > sum_prod(prod) }
+end
+
 # rubocop:enable LineLength
 # rubocop:enable AbcSize
