@@ -79,6 +79,7 @@ def option2(data)
   if correct_search(data, name)
     i = get_index(data, name)
     puts "La cantidad de productos es #{sum_prod(data[i])}"
+    options(data)
   else
     puts 'Ese producto no esta en el stock.'
     option2(data)
