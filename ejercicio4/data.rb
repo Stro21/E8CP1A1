@@ -47,7 +47,7 @@ def add_product(data, txt)
   t3 = gets.chomp
   data << create_hash(name, t1, t2, t3)
   File.open(txt, 'a') { |file| file.puts "#{name}, #{t1}, #{t2}, #{t4}" }
-  hash
+  data
 end
 
 def nr?(str)

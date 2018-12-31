@@ -98,3 +98,8 @@ def option4(data)
   stock_less_than(data, num)
   options(data)
 end
+
+def option5(data)
+  info = add_product(data, 'products.txt')
+  options(info)
+end
