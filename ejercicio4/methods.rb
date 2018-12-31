@@ -47,15 +47,11 @@ end
 
 def get_index(data, name)
   id = 0
-  # data.each_with_index do |prod, ind|
-  #   puts "paso por aquí"
-  #   return ind unless prod[name.to_sym].nil?
-  #   end
   data.each do |prod|
-    if prod[name.to_sym].nil?
-      id += 1
-    else
+    if prod[:name] == name
       return id
+    else
+      id += 1
     end
   end
 end
