@@ -46,7 +46,7 @@ def add_product(data, txt)
   puts 'Ingrese la cantidad en la tienda 3'
   t3 = gets.chomp
   data << create_hash(name, t1, t2, t3)
-  File.open(txt, 'a') { |file| file.puts "#{name}, #{t1}, #{t2}, #{t4}" }
+  File.open(txt, 'a') { |file| file.puts "#{name}, #{t1}, #{t2}, #{t3}" }
   data
 end
 
