@@ -85,3 +85,8 @@ def option2(data)
     option2(data)
   end
 end
+
+def option3(data)
+  warehouse_nr(data)
+  options(data)
+end

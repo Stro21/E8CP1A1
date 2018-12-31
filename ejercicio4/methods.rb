@@ -1,4 +1,5 @@
 # rubocop:disable LineLength
+# rubocop:disable AbcSize
 
 require_relative 'menu.rb'
 
@@ -54,4 +55,18 @@ def get_index(data, name)
   end
 end
 
+def warehouse_nr(data)
+  t1 = []
+  t2 = []
+  t3 = []
+  data.each do |prod|
+    t1 << prod[:name] if prod[:tienda1] == 'NR'
+    t2 << prod[:name] if prod[:tienda2] == 'NR'
+    t3 << prod[:name] if prod[:tienda3] == 'NR'
+  end
+  store = [t1, t2, t3]
+  store.each_with_index { |sto, id| print "Tienda #{id + 1}: #{sto}\n" unless sto == [] }
+end
+
 # rubocop:enable LineLength
+# rubocop:enable AbcSize
